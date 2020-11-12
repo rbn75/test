@@ -1,1 +1,59 @@
 <h2>Welcome private</h2>
+
+<form action="/" method="post">
+<label for="name">Name:
+<input type="text" name="name" id="name">
+</label>
+<label for="description">Description:
+<input type="description" name="description" id="description">
+</label>
+<br>
+<button type="submit">Signup</button>
+</form>
+
+
+
+
+<div id='map' style='width: 100%; height: 300px;'></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoicmJuNjMzIiwiYSI6ImNraGNnYWgxYzA1MzEyc28ycmFrbnJ3NWQifQ.ioSD1m0ZauH_IXSOTXhJ3A';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: [-79.4512, 43.6568],
+zoom: 13
+});
+ 
+map.addControl(
+new MapboxGeocoder({
+accessToken: mapboxgl.accessToken,
+mapboxgl: mapboxgl
+})
+
+//i culdn´t make work with this code so i couldn´t continue
+//
+ //const gc = new MapboxGeocoder({
+//    accessToken: mapboxgl.accessToken,
+//    mapboxgl: mapboxgl
+//  });
+//
+//  gc.on('result', e => {
+//    const { result: { center, text } } = e
+//    const $nameInput = document.querySelector('#name')
+//    $nameInput.setAttribute('placeholder', text)
+//  })
+//
+//  map.addControl(gc)
+
+
+
+);
+
+</script>
+ <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+<link
+rel="stylesheet"
+href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+type="text/css"
+/>
+  
